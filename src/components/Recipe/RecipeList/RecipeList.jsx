@@ -35,7 +35,7 @@ export default function RecipeList() {
           ))}
         </div>
       ) : (
-        "loading ..."
+        "loading ... or no recipes to show"
       )}
     </div>
   );

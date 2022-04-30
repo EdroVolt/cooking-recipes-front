@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { baseURL } from "../../../../apis/Recipe";
 
 export default function RecipeCard({
   id,
@@ -10,14 +11,7 @@ export default function RecipeCard({
 }) {
   return (
     <div className="w-full flex flex-col gradient-border">
-      <img
-        className="w-full"
-        src={
-          process.env.REACT_APP_RECIPE_BASE_URL ||
-          "http://localhost:8080/" + image
-        }
-        alt={title}
-      />
+      <img className="w-full" src={baseURL + image} alt={title} />
       <div className="uppercase mt-auto p-4 flex flex-col">
         <h2 className="text-3xl mb-4 text-green-400 tracking-wider">{title}</h2>
         <p className="text-sm font-mono mb-4">{ingredient}</p>
