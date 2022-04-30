@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import Recipe from "../../../apis/Recipe";
+import Recipe, { baseURL } from "../../../apis/Recipe";
 
 export default function RecipeDetails() {
   const { id } = useParams();
@@ -26,7 +26,7 @@ export default function RecipeDetails() {
       {recipe ? (
         <div className="grid grid-cols-1 w-full lg:grid-cols-3 gap-4">
           <img
-            src={`http://localhost:8080/${recipe.image}`}
+            src={baseURL + recipe.image}
             alt={recipe.title}
             className="w-full"
           />
