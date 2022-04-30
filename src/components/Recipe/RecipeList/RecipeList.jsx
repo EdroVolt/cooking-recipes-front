@@ -22,7 +22,7 @@ export default function RecipeList() {
         My Recipes
       </h1>
       {recipes.length ? (
-        <div className="flex flex-col gap-4">
+        <div className="grid gap-8 gird-cols-1 lg:grid-cols-3">
           {recipes.map(({ _id, title, ingredient, image }) => (
             <RecipeCard
               key={_id}
@@ -34,7 +34,9 @@ export default function RecipeList() {
             />
           ))}
         </div>
-      ) : null}
+      ) : (
+        "loading ..."
+      )}
     </div>
   );
 }
